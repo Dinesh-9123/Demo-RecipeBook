@@ -1,0 +1,14 @@
+ 
+<a class="flexcontainer" [routerLink]="[index]">
+    <div class="samebox">
+        <div>
+            <h1 style="margin-bottom: 20px;" class="name">{{recipe.name}}</h1>
+        </div>
+        <div>
+            <p class="discription">{{recipe.discription}}</p>
+        </div>
+    </div>
+    <div class="imgpath">
+        <img [src]="recipe.imgpath">
+    </div>
+</a>

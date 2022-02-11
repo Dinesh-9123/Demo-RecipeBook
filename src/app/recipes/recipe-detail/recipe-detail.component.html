@@ -1,0 +1,16 @@
+ 
+
+<div class="flexcontainer">
+  <div class="btns">
+    <button type="button" class="btn" (click)="toShoppingList()">Add To Shopping</button>
+    <button type="button" class="btn" (click)="EditRecipe()">Edit Recipe</button>
+    <button type="button" class="btn">Delete Recipe</button>
+  </div>
+  <div>
+    <h1 class="name">{{recipe.name}}</h1>
+  </div>
+  <img [src]="recipe.imgpath" style="height:300px; width: 400px;">
+  <div>
+    <p>{{recipe.discription}}</p>
+  </div>
+</div>

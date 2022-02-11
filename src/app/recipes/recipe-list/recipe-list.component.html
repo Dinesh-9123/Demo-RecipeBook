@@ -1,0 +1,9 @@
+
+<button type="button" (click)="onNewRecipe()" class="btn">Add New Recipe</button>
+
+
+
+<app-recipe *ngFor="let x of recipes; let i= index" 
+    [recipe]="x"
+    [index]="i"
+></app-recipe>

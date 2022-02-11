@@ -1,0 +1,16 @@
+<div class="flexcontainer" [formGroup]="recipeForm">
+    <div class="btns">
+        <button type="button" class="btn" (click)="onSubmit()">Save</button>
+        <button type="button" class="btn" (click)="onClear()">Clear</button>
+        <button type="button" class="btn" (click)="onClick()">Cancel</button>
+    </div>
+    <div class="form">
+        <label class="label">Recipe Name:</label><br>
+        <input class="input" formControlName='name'><br>
+        <label class="label">Image URL:</label><br>
+        <input class="input" formControlName='imgpath'><br>
+        <img src="https://media.istockphoto.com/photos/pizza-picture-id184946701?k=20&m=184946701&s=612x612&w=0&h=LRc4BfIMzP3QW9QKr5eria66F1ZeV2EY8xXeva-E6io="><br>
+        <label class="label">Recipe Discription:</label><br>
+        <textarea rows="8" class="input" formControlName='discription' ></textarea>
+    </div>
+</div>

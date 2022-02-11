@@ -1,0 +1,39 @@
+.flexcontainer{
+    display: flex;
+    cursor: pointer;
+    
+    
+}
+.samebox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.imgpath{
+    display: flex;
+     
+}
+
+img{
+    height: 150px;
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+}
+.name{
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+
+}
+.discription{
+    color: rgb(9, 73, 73);
+}

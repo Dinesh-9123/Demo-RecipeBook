@@ -1,0 +1,31 @@
+.flexcontainer{
+    display: flex;
+    cursor: pointer;
+    
+    
+}
+.samebox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.imgpath{
+    display: flex;
+     
+}
+
+img{
+    height: 150px;
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+a{
+    text-decoration: none;
+}

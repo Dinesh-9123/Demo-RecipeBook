@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+.flexcontainer {
+    background-color: rgb(177, 236, 200);
+    overflow: hidden;  
+    position: fixed;
+    width: 100%;
+}
+.flexcontainer a {
+    float: left;
+    padding: 20px;
+    cursor: pointer;
+    gap: 30px;
+    font-size: 17px;
+}
+.auth{
+    float:right; 
+}
+a{
+    text-decoration: none;
+}
