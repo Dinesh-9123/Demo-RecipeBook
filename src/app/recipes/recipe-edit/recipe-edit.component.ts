@@ -23,9 +23,10 @@ export class RecipeEditComponent implements OnInit {
       (params:Params)=>{
         this.id=+params['id'];
         this.editMode = params['id'] != null;  
+        this.initForm();
       }
     )
-    this.initForm();
+     
   }
   public initForm(){
 
@@ -63,7 +64,12 @@ export class RecipeEditComponent implements OnInit {
   }
   
   onClick(){
-    this.router.navigate(['../../',this.id],{relativeTo:this.route});
+    if(this.editMode){
+      this.router.navigate(['../../',this.id],{relativeTo:this.route});
+    }
+    else{
+      this.router.navigateByUrl('/recipes')
+    }
   }
 
 }

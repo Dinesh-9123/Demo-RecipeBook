@@ -3,20 +3,17 @@ body {
 }
 .flexcontainer {
     background-color: rgb(177, 236, 200);
-    overflow: hidden;  
-    position: fixed;
-    width: 100%;
+    padding: 20px;
+     
 }
 .flexcontainer a {
-    float: left;
+    
     padding: 20px;
     cursor: pointer;
     gap: 30px;
     font-size: 17px;
 }
-.auth{
-    float:right; 
-}
+ 
 a{
     text-decoration: none;
 }

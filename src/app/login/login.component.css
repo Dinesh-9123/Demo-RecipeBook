@@ -139,3 +139,6 @@ input.size-checkbox {
 .login-page a {
     color: rgb(95, 95, 95)
 }
+a{
+    cursor: pointer;
+}

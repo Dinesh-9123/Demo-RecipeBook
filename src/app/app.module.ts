@@ -15,7 +15,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
- 
+import { RecipeService } from './recipes/recipe.service';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
+    ForgetPasswordComponent,
+    ChangePasswordComponent,
   
   ],
   imports: [
@@ -40,7 +44,7 @@ import { LogoutComponent } from './logout/logout.component';
     ReactiveFormsModule,
  
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

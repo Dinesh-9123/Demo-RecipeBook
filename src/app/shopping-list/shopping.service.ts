@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from '../recipes/recipe.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingService {
+
+  public newRecipe = new EventEmitter<Recipe[]>();
 
   constructor() { }
 
@@ -16,6 +18,7 @@ export class ShoppingService {
   
   addRecipe(recipe:Recipe){
     this.recipes.push(recipe);
+    this.newRecipe.emit(this.recipes.slice());
   }
 
 

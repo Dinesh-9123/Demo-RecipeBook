@@ -1,6 +1,6 @@
 <div class="flexcontainer" [formGroup]="recipeForm">
     <div class="btns">
-        <button type="button" class="btn" (click)="onSubmit()">Save</button>
+        <button type="button" class="btn" (click)="onSubmit()" [disabled]="recipeForm.invalid">Save</button>
         <button type="button" class="btn" (click)="onClear()">Clear</button>
         <button type="button" class="btn" (click)="onClick()">Cancel</button>
     </div>
