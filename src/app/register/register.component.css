@@ -96,9 +96,9 @@ input.size-checkbox {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
-
+ 
 .fa {
     text-decoration: none;
     font-size: 20px;
@@ -137,4 +137,13 @@ input.size-checkbox {
 
 .login-page a {
     color: rgb(95, 95, 95)
+}
+
+.color{
+    color: red;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
 }

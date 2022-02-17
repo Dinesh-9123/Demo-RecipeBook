@@ -3,11 +3,18 @@
         <h1 class="title">Sign In</h1>
             <div class="form-group">
                 <label>Email ID</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" formControlName= "email"/>
+                <p class="color" *ngIf="">email is required</p>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" />
+                <input type="password" class="form-control" formControlName = "password" />
+                <p class="color" *ngIf="">password is required</p>
+            </div>
+            <div class="form-group">
+                <label>Confrim Password</label>
+                <input type="password" class="form-control" formControlName = "confrimPassword" />
+                <p class="color" *ngIf="">Confrim password is required</p>
             </div>
             <div class="form-group">
                 <button class="btn full-width">Submit</button>
@@ -36,7 +43,7 @@
                     <a href="#" class="fa fa-linkedin"></a>
                 </div> 
             </div>   
-            <div class="login-page" style="margin-bottom:70px">
+            <div class="login-page">
                 <div>
                     <p>Already a user?</p>
                 </div>

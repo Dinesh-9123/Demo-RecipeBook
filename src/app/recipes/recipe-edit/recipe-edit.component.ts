@@ -26,7 +26,7 @@ export class RecipeEditComponent implements OnInit {
         this.initForm();
       }
     )
-     
+    this.initForm(); 
   }
   public initForm(){
 

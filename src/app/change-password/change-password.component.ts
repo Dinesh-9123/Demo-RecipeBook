@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-change-password',
@@ -25,5 +26,14 @@ export class ChangePasswordComponent implements OnInit {
       'conformPassword':new FormControl('',Validators.required)
     })
   }
-
+  onSubmit(){
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Password Successfully Changed',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigateByUrl('/recipes');
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ShoppingService } from 'src/app/shopping-list/shopping.service';
+import Swal from 'sweetalert2';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { RecipesComponent } from '../recipes.component';
@@ -31,12 +32,38 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   toShoppingList(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'added to shopping list',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
     this.shoppingListService.addRecipe(this.recipe);
   }
 
   DeleteRecipe(){
-    this.recipeService.deleteRecipe(this.id);
-    this.router.navigateByUrl('/recipes')
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      this.recipeService.deleteRecipe(this.id);
+      this.router.navigateByUrl('/recipes')
+      }
+       
+    })
+   
   }
 
 }

@@ -23,6 +23,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.0.0",
     "feather-icons": "^4.28.0",
     "rxjs": "~6.5.5",
+    "sass": "^1.49.7",
+    "sweetalert2": "^11.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
