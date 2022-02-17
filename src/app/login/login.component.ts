@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import * as feather from 'feather-icons';
+
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,7 @@ import * as feather from 'feather-icons';
 export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
+  submitted: boolean=false;
 
   constructor(private router:Router, private route:ActivatedRoute) { }
 
@@ -25,9 +26,19 @@ export class LoginComponent implements OnInit {
       'checkbox':new FormControl('',Validators.required)
     })
   } 
+  get f() {
+    return this.loginForm.controls;
+  }
 
   onSubmit(){
-    this.router.navigateByUrl('/recipes');
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      this.loginForm.markAsTouched();
+      return;
+    }
+    else{
+      this.router.navigateByUrl('/recipes');
+    }
   }
  
 }

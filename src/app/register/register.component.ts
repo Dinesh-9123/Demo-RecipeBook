@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   
   public signUpform:FormGroup;
+  submitted: boolean=false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -23,4 +25,23 @@ export class RegisterComponent implements OnInit {
       'confrimPassword': new FormControl('',Validators.required),
     })
   }
+  get f() {
+    return this.signUpform.controls;
+  }
+
+
+  onSubmit(){
+    this.submitted = true;
+    if (this.signUpform.invalid) {
+      this.signUpform.markAsTouched();
+      return;
+    }
+    else{
+      this.router.navigateByUrl('/login');
+    }
+  }
+
+
+
+
 }

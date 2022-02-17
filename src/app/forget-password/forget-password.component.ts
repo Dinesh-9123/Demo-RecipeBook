@@ -14,6 +14,8 @@ export class ForgetPasswordComponent implements OnInit {
   public password:boolean = false;
   public otpform:FormGroup;
   public passwordChange:FormGroup;
+  submitted: boolean = false;
+  submite: boolean= false;
 
   constructor(private router:Router) { }
 
@@ -37,26 +39,48 @@ export class ForgetPasswordComponent implements OnInit {
 
   }
 
+  get f1() {
+    return this.otpform.controls;
+  }
+
   onOtpSubmit(){
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Otp Match',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    this.otp = false;
-    this.password = true;
+    this.submite = true;
+    if (this.otpform.invalid) {
+      this.otpform.markAsTouched();
+      return;
+    }
+    else{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Otp Match',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.otp = false;
+      this.password = true;
+    }
+  }
+
+  get f() {
+    return this.passwordChange.controls;
   }
 
   onSavePassword(){
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Password Successfully Changed',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    this.router.navigateByUrl('/recipes');
+    this.submitted = true;
+    if (this.passwordChange.invalid) {
+      this.passwordChange.markAsTouched();
+      return;
+    }
+    else{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Password Successfully Changed',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.router.navigateByUrl('/login');
+    }
   }
 }

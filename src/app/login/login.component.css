@@ -141,7 +141,13 @@ input.size-checkbox {
 }
 a{
     cursor: pointer;
+    text-decoration: none;
 }
 .color{
-    color: red;
+    color:red;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
 }
